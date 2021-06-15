@@ -51,7 +51,6 @@ h2 {
     margin:0 auto;
     width: 720px;
     position: relative;
-    
 }
 
 #cabecalho a {
@@ -97,12 +96,17 @@ h2 {
     color: #747474;
     font-family: "PTSansBold";
     margin-top: 15px;
-    
 }
 
 #lista-links li a {
     text-decoration: none;
+    margin: 10px 0;
+    background-color: #c7c7c7;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    text-align: center;
 }
-
 
 
