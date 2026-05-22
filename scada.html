@@ -1,45 +1,53 @@
-<html>
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SCADA APP</title>
+        <link rel="icon" type="image/png" href="https://www.tramontina.net/intranet/favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UFT-8" />
-		<meta name="robots" content="noindex">
-		<title>SCADA APP</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-		<link rel="icon" type="image/png" href="https://www.tramontina.net/intranet/favicon.ico">
-		<link rel="stylesheet" href="styles.css">
-	</head>
+    <body>
+        <main class="app-shell" aria-labelledby="page-title">
+            <section class="intro">
+                <img
+                    class="app-logo"
+                    alt="Logo do SCADA APP"
+                    src="https://mobile-tramontina.github.io/catalogo/apple/icone.png"
+                >
 
-	<body style="display:flex;flex-direction: column;align-items: center;justify-content: center;height: 100vh; margin: 0px;" >
+                <h1 id="page-title">SCADA APP</h1>
 
-    <div id="container"></div>		
+                <p class="description">
+                    O SCADA APP &eacute; um software desenvolvido pela Tramontina para notificar mensagens do SCADA para os respons&aacute;veis.
+                </p>
+            </section>
 
-			<img alt="" src="https://mobile-tramontina.github.io/catalogo/apple/icone.png" style="width: 70px; height: 70px; margin-bottom: 10px;" />		
-			<h2>SCADA APP</h2>
+            <section class="downloads" aria-labelledby="download-title">
+                <h2 id="download-title">Selecione seu sistema para realizar o download</h2>
 
-			<span style="margin-top: 40px">O SCADA APP é um software desenvolvido pela Tramontina para notificar mensagens do SCADA para os responsáveis.</span>
+                <ul class="download-list">
+                    <li>
+                        <a class="download-card" href="https://mobile-tramontina.github.io/catalogo/android/scada32.apk" aria-label="Baixar SCADA APP para Android 32 bits">
+                            <img src="img/logo_android_32.png" alt="Android 32 bits">
+                        </a>
+                    </li>
 
-			<span id="titulo-download">Selecione seu sistema para realizar o download</span>
+                    <li>
+                        <a class="download-card" href="https://mobile-tramontina.github.io/catalogo/android/scada.apk" aria-label="Baixar SCADA APP para Android 64 bits">
+                            <img src="img/logo_android_64.png" alt="Android 64 bits">
+                        </a>
+                    </li>
 
-			<ul style="display:flex; flex-direction: row">
-				<li style="margin-right: 80px; list-style: none;">
-					<a href="https://mobile-tramontina.github.io/catalogo/android/scada32.apk">
-						<img src="img/logo_android_32.png" /> 
-					</a>
-				</li>
-				
-				<li style="margin-right: 80px; list-style: none;">
-					<a href="https://mobile-tramontina.github.io/catalogo/android/scada.apk">
-						<img src="img/logo_android_64.png" /> 
-					</a>
-				</li>				
-
-				<li style="margin-right: 80px; list-style: none;">
-					<a href="itms-services://?action=download-manifest&amp;url=https://mobile-tramontina.github.io/catalogo/apple/scada.plist">
-						<img src="img/logo_apple.png" />
-          </a>
-				</li>
-      </ul>
-		</div>				 
-
-  </body>
+                    <li>
+                        <a class="download-card" href="itms-services://?action=download-manifest&amp;url=https://mobile-tramontina.github.io/catalogo/apple/scada.plist" aria-label="Baixar SCADA APP para iOS">
+                            <img src="img/logo_apple.png" alt="iOS Apple">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </body>
 </html>

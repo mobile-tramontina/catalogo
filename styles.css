@@ -1,112 +1,166 @@
-@font-face {
-    font-family: 'PTSansRegular';
-    src: url('fontes/pts55f.eot'); src: url('fontes/pts55f.eot') format('embedded-opentype'), url('fontes/pts55f.woff') format('woff'), url('fontes/pts55f.ttf') format('truetype'), url('fontes/pts55f.svg#PTSansRegular') format('svg');
+:root {
+    --brand: #0057a8;
+    --brand-dark: #003f7a;
+    --text: #2f3640;
+    --muted: #6d7784;
+    --surface: #ffffff;
+    --background: #f4f7fb;
+    --border: #dbe3ee;
+    --shadow: 0 18px 45px rgba(25, 47, 72, 0.12);
 }
 
-@font-face {
-    font-family: 'PTSansBold';
-    src: url('fontes/pts75f.eot'); src: url('fontes/pts75f.eot') format('embedded-opentype'), url('fontes/pts75f.woff') format('woff'), url('fontes/pts75f.ttf') format('truetype'), url('fontes/pts75f.svg#PTSansBold') format('svg');
+* {
+    box-sizing: border-box;
 }
-
 
 body {
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    font-family: 'PTSansRegular';
+    padding: 32px 18px;
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background:
+        linear-gradient(180deg, rgba(0, 87, 168, 0.08), rgba(244, 247, 251, 0) 42%),
+        var(--background);
+}
+
+.app-shell {
+    width: min(100%, 760px);
+    padding: clamp(28px, 6vw, 56px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.app-logo {
+    width: clamp(68px, 16vw, 92px);
+    height: clamp(68px, 16vw, 92px);
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
 }
 
 h1 {
-    background: url(img/logo_tramontina_branco.png) no-repeat 0 0 transparent;
-    width: 177px;
-    height: 36px;
-    display:inline-block;
-    text-indent: -9999px;
-    margin-top: 10px;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.05;
+    font-weight: 700;
+    color: var(--brand-dark);
+}
+
+.description {
+    max-width: 620px;
+    margin-top: 22px;
+    font-size: clamp(1rem, 2.6vw, 1.1rem);
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.downloads {
+    margin-top: clamp(30px, 6vw, 44px);
 }
 
 h2 {
-    font-size: 36px;
+    font-size: clamp(1.05rem, 3.5vw, 1.35rem);
+    line-height: 1.35;
+    font-weight: 700;
     text-align: center;
-    color: #8f8f8f;
-    font-weight: normal;
-    margin: 0;
+    color: var(--text);
 }
 
-#topo {
-    width: 100%;
-    height: 50px;
-    background-color: #0000B7;
-    position: absolute;
-}
-
-#titulo {
-    width: 100%;
-    height: 70px;
-    margin-top: 50px;
-    background-color: #F0F0F0;
-    position: absolute;
-}
-
-#container {
-    margin:0 auto;
-    width: 720px;
-    position: relative;
-}
-
-#cabecalho a {
-    float:right;
-    margin-top: 15px;
-    color: #F0F0F0;
-    text-decoration: none;
-}
- 
-#texto-principal {
-    display:block;
-    text-align: center;
-    font-size: 14px;
-    color: #747474;
-    margin-top: 50px;
-}
- 
-#titulo-download {
-    display:block;
-    font-family: "PTSansBold";
-    text-align: center;
-    font-size: 16px;
-    color: #747474;
-    margin: 50px 0 40px 0;
-}
- 
-#lista-links {
+.download-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 3vw, 22px);
+    max-width: 500px;
+    margin: 22px auto 0;
+    padding: 0;
     list-style: none;
-    width: 702px;
-    margin: 0 auto;
-    padding:0;
-    
 }
 
-#lista-links li {
-    float: left;
-}
-
-#lista-links li span {
-    display:block;
-    width:100%;
-    text-align: center;
-    color: #747474;
-    font-family: "PTSansBold";
-    margin-top: 15px;
-}
-
-#lista-links li a {
+.download-card {
+    width: 100%;
+    min-height: 132px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    margin: 10px 0;
-    background-color: #c7c7c7;
-    padding: 10px 0;
-    border-radius: 5px;
-    color: white;
-    display: block;
-    text-align: center;
+    border-radius: 8px;
+    transition: transform 160ms ease, background-color 160ms ease;
 }
 
+.download-card:hover,
+.download-card:focus-visible {
+    transform: translateY(-2px);
+    background-color: rgba(0, 87, 168, 0.06);
+    outline: none;
+}
 
+.download-card img {
+    display: block;
+    width: min(100%, 124px);
+    max-height: 124px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 640px) {
+    body {
+        align-items: start;
+        padding: 18px;
+    }
+
+    .app-shell {
+        padding: 28px 20px;
+    }
+
+    .download-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .download-card {
+        min-height: 92px;
+        padding: 6px;
+    }
+
+    .download-card img {
+        width: min(100%, 84px);
+        max-height: 84px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 12px;
+    }
+
+    .app-shell {
+        padding: 24px 16px;
+    }
+
+    .download-card {
+        min-height: 78px;
+        padding: 4px;
+    }
+
+    .download-card img {
+        width: min(100%, 70px);
+        max-height: 70px;
+    }
+}
