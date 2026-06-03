@@ -1,70 +1,65 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UFT-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex">
     <title>Tramontina - Força de Vendas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://www.tramontina.net/intranet/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div id="topo"></div>
-    <div id="titulo"></div>
 
-    <div id="container">
-
-        <div id="cabecalho">
+    <main class="app-shell">
+        
+        <header class="intro">
             <h1>Tramontina</h1>
-            <a href="https://saber.tramontina.cloud/procedimentos/fvd011" target="_blank">Ajuda</a>
-        </div>
+            <p class="description">
+                O Catálogo Eletrônico é um sistema desenvolvido pela Tramontina para seus
+                representantes, com o objetivo de captar, de forma eletrônica, os pedidos 
+                realizados através de equipamentos móveis. Esta aplicação é compatível com 
+                tablets Apple e Android, além dos sistemas operacionais Windows e OS X.
+            </p>
+        </header>
 
-        <h2>Catálogo Eletrônico</h2>
+        <section class="downloads">
+            <h2>Selecione seu sistema para realizar o download</h2>
 
-        <p id="texto-principal">O Catálogo Eletrônico é um sistema desenvolvido pela Tramontina para seus
-            representantes, <br />com o objetivo de captar, de forma eletrônica, os pedidos realizados através de
-            equipamentos móveis.<br /><br />Esta aplicação é compatível com tablets Apple e Android, além dos sistemas
-            operacionais Windows e OS X.</p>
+            <ul class="download-list grid-4-col">
+                
+                <li>
+                    <div class="download-card has-multiple-links">
+                        <img src="img/logo_android.png" alt="Android" />
+                        <div class="version-badge-container">
+                            <a href="https://mobile-tramontina.github.io/catalogo/android/catalogo.apk" class="version-badge">32x</a>
+                            <a href="https://mobile-tramontina.github.io/catalogo/android/catalogo64.apk" class="version-badge">64x</a>
+                        </div>
+                    </div>
+                </li>
 
-        <span id="titulo-download">Selecione seu sistema para realizar o download</span>
+                <li>
+                    <a href="itms-services://?action=download-manifest&amp;url=https%3a%2f%2fmobile-tramontina.github.io%2fcatalogo%2fapple%2fcatalogo.plist" class="download-card" title="Baixar para iOS 64x">
+                        <img src="img/logo_apple.png" alt="iOS" />
+                    </a>
+                </li>
 
-        <ul id="lista-links">
-            <li style="margin-right: 80px;">
-                <img src="img/logo_android.png" />
-                <span>Android</span>
-                <a href="https://mobile-tramontina.github.io/catalogo/android/catalogo.apk"> 32x
-                </a>
-                <a href="https://mobile-tramontina.github.io/catalogo/android/catalogo64.apk"> 64x
-                </a>
-            </li>
+                <li>
+                    <a href="https://mobile-tramontina.github.io/catalogo/apple/catalogo.app.zip" class="download-card" title="Baixar para OS X 64x">
+                        <img src="img/logo_osx.png" alt="OS X" />
+                    </a>
+                </li>
 
-            <li style="margin-right: 80px;">
-                <img src="img/logo_apple.png" />
-                <span>iOS</span>
-                <a
-                    href="itms-services://?action=download-manifest&amp;url=https%3a%2f%2fmobile-tramontina.github.io%2fcatalogo%2fapple%2fcatalogo.plist">
-                    64x </a>
-            </li>
+                <li>
+                    <a href="https://mobile-tramontina.github.io/catalogo/windows/instalar_catalogo.exe" class="download-card" title="Baixar para Windows 32x">
+                        <img src="img/logo_windows.png" alt="Windows" />
+                    </a>
+                </li>
 
-            <li style="margin-right: 80px;">
-                <img src="img/logo_osx.png" />
-                <span>OS X</span>
-                <a href="https://mobile-tramontina.github.io/catalogo/apple/catalogo.app.zip"> 64x
-                </a>
-            </li>
-
-            <li>
-                <img src="img/logo_windows.png" />
-                <span>Windows</span>
-                <a href="https://mobile-tramontina.github.io/catalogo/windows/instalar_catalogo.exe">32x</a>
-            </li>
-        </ul>
-
-    </div>
+            </ul>
+        </section>
+    </main>
 
 </body>
-
 </html>

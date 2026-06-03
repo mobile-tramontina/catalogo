@@ -164,3 +164,56 @@ h2 {
         max-height: 70px;
     }
 }
+
+/* ==========================================
+   Novos estilos para a página com 4 colunas 
+   e múltiplos links (Mantém compatibilidade)
+   ========================================== */
+
+/* Força a lista a ter 4 colunas em telas grandes */
+.download-list.grid-4-col {
+    max-width: 700px; /* Aumentado para caber 4 colunas confortavelmente */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Modifica o card para permitir textos/links internos empilhados */
+.download-card.has-multiple-links {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+}
+
+/* Container para agrupar os botões de arquitetura (32x / 64x) */
+.version-badge-container {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Estilo para os botões textuais (32x, 64x) */
+.version-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--brand);
+    background-color: rgba(0, 87, 168, 0.08);
+    border: 1px solid rgba(0, 87, 168, 0.2);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 120ms, color 120ms;
+}
+
+.version-badge:hover {
+    background-color: var(--brand);
+    color: var(--surface);
+}
+
+/* Ajuste de responsividade para 4 colunas em telas menores */
+@media (max-width: 640px) {
+    .download-list.grid-4-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Vira 2x2 em mobile */
+        gap: 12px;
+    }
+}
