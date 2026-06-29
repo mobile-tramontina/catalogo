@@ -119,6 +119,97 @@ h2 {
     object-fit: contain;
 }
 
+/* Força a lista a ter 4 colunas em telas grandes */
+.download-list.grid-4-col {
+    max-width: 700px; /* Aumentado para caber 4 colunas confortavelmente */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Modifica o card para permitir textos/links internos empilhados */
+.download-card.has-multiple-links {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+}
+
+/* Container para agrupar os botões de arquitetura (32x / 64x) */
+.version-badge-container {
+    display: flex;
+    gap: 8px; /* Aumentado ligeiramente o espaço entre eles */
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px; /* Afasta um pouquinho da logo do Android */
+}
+
+/* Estilo para os botões textuais (32x, 64x) */
+.version-badge {
+    display: inline-block;
+    padding: 6px 14px; /* Aumentado o clique/toque do botão */
+    font-size: 0.9rem; /* Fonte maior e mais legível (era 0.75rem) */
+    font-weight: bold;
+    color: var(--brand); /* Usa a cor padrão da marca */
+    background-color: rgba(0, 87, 168, 0.08);
+    border: 1px solid rgba(0, 87, 168, 0.2);
+    border-radius: 6px; /* Bordas um pouco mais suaves */
+    text-decoration: none;
+    transition: background-color 120ms, color 120ms, transform 120ms;
+}
+
+.version-badge:hover,
+.version-badge:focus-visible {
+    background-color: var(--brand);
+    color: var(--surface);
+    transform: scale(1.05); /* Leve efeito de crescimento ao passar o mouse */
+}
+
+.links-uteis {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Garante que os links quebrem de linha em telas pequenas */
+}
+
+.link-suporte {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0056b3; /* Cor azul padrão, altere conforme a identidade visual */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.link-suporte:hover {
+    background-color: #004085; /* Tom mais escuro para o efeito hover */
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 12px;
+    }
+
+    .app-shell {
+        padding: 24px 16px;
+    }
+
+    .download-card {
+        min-height: 78px;
+        padding: 4px;
+    }
+
+    .download-card img {
+        width: min(100%, 70px);
+        max-height: 70px;
+    }
+	
+	.version-badge {
+        padding: 4px 10px; /* Reduz levemente o botão apenas em telas minúsculas */
+        font-size: 0.8rem;
+    }	
+}
+
 @media (max-width: 640px) {
     body {
         align-items: start;
@@ -143,77 +234,9 @@ h2 {
         width: min(100%, 84px);
         max-height: 84px;
     }
-}
-
-@media (max-width: 360px) {
-    body {
-        padding: 12px;
-    }
-
-    .app-shell {
-        padding: 24px 16px;
-    }
-
-    .download-card {
-        min-height: 78px;
-        padding: 4px;
-    }
-
-    .download-card img {
-        width: min(100%, 70px);
-        max-height: 70px;
-    }
-}
-
-/* ==========================================
-   Novos estilos para a página com 4 colunas 
-   e múltiplos links (Mantém compatibilidade)
-   ========================================== */
-
-/* Força a lista a ter 4 colunas em telas grandes */
-.download-list.grid-4-col {
-    max-width: 700px; /* Aumentado para caber 4 colunas confortavelmente */
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-/* Modifica o card para permitir textos/links internos empilhados */
-.download-card.has-multiple-links {
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px 8px;
-}
-
-/* Container para agrupar os botões de arquitetura (32x / 64x) */
-.version-badge-container {
-    display: flex;
-    gap: 6px;
-    width: 100%;
-    justify-content: center;
-}
-
-/* Estilo para os botões textuais (32x, 64x) */
-.version-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: var(--brand);
-    background-color: rgba(0, 87, 168, 0.08);
-    border: 1px solid rgba(0, 87, 168, 0.2);
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 120ms, color 120ms;
-}
-
-.version-badge:hover {
-    background-color: var(--brand);
-    color: var(--surface);
-}
-
-/* Ajuste de responsividade para 4 colunas em telas menores */
-@media (max-width: 640px) {
+	
     .download-list.grid-4-col {
         grid-template-columns: repeat(2, minmax(0, 1fr)); /* Vira 2x2 em mobile */
         gap: 12px;
-    }
+    }	
 }
